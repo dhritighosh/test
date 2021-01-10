@@ -1,0 +1,28 @@
+---
+spring:
+  application:
+    name: Test-application
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+application:
+  version: 2.0.0
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /test
+
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: health,info,krypt,keepalive,refresh
+  endpoint:
+    health:
+      show-details: always
+  health:
+    ldap:
+      enabled: false
